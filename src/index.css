@@ -1,0 +1,30 @@
+:root {
+  --color-dark30: #000000;
+  --background-hero: #4853c2;
+  --color-subText: #8a8fb9;
+  --color-text: #151875;
+  --color-primary: #fb2e86;
+  --color-white: #ffffff;
+  --color-gray10: #c2c2c2;
+}
+
+body {
+  margin: 0;
+
+  font-family: "Inter", sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* se encarga de centrar nuestro contenido y también de delimitar */
+.wrapper {
+  width: 1366px;
+  margin: 0 auto;
+}
+
+.debug {
+  border: 3px solid brown;
+}
