@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { HeaderContainer } from "../../styles/headerStyle";
 import logo from "../../images/logo.png";
+import { ProductoContext } from "../../context/ProductContext";
 
 const Header = () => {
+  const { productArr } = useContext(ProductoContext);
+  const { totalPrice, products } = productArr;
+
   return (
     <HeaderContainer className="">
       <div className="wrapper ">
@@ -17,7 +21,13 @@ const Header = () => {
               <li>Tienda</li>
               <li>Contacto</li>
             </ul>
-            <i className="icon-shopping-cart"></i>
+            <div className="cartContainer ">
+              <i className="icon-shopping-cart ">
+                <span className="cartCircle">
+                  <p>{products.length}</p>
+                </span>
+              </i>
+            </div>
           </nav>
           <form className="">
             <input type="text" />
