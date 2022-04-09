@@ -10,20 +10,23 @@ import ProductPage from "./components/pages/ProductPage";
 import ProductDetails from "./components/pages/ProductDetails";
 import ProductProvider from "./context/ProductContext";
 import Dashboard from "./components/pages/Dashboard";
+import TotalProductsProvider from "./context/TotalProductsContext";
 
 const App = () => {
   return (
-    <ProductProvider>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Inicio />} />
-          <Route path="/products" element={<ProductPage />} />
-          <Route path="/products/:id" element={<ProductDetails />} />
-          <Route path="/dashboard-admin" element={<Dashboard />} />
-        </Routes>
-      </BrowserRouter>
-    </ProductProvider>
+    <TotalProductsProvider>
+      <ProductProvider>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Inicio />} />
+            <Route path="/products" element={<ProductPage />} />
+            <Route path="/products/:id" element={<ProductDetails />} />
+            <Route path="/dashboard-admin" element={<Dashboard />} />
+          </Routes>
+        </BrowserRouter>
+      </ProductProvider>
+    </TotalProductsProvider>
   );
 };
 

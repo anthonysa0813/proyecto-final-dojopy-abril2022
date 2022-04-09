@@ -7,6 +7,7 @@ import { Card } from "../../styles/products";
 import Stars from "simple-rating-stars";
 import { ButtonFill, ButtonUnFill } from "../../styles/buttonsStyle";
 import { ProductoContext } from "../../context/ProductContext";
+import { Link } from "react-router-dom";
 
 const CardProduct = ({ product }) => {
   const { productArr, setproductArr } = useContext(ProductoContext);
@@ -19,12 +20,12 @@ const CardProduct = ({ product }) => {
   };
 
   return (
-    <Card className="">
+    <Card className="debug">
       <div className="cardImage ">
         <img src={product.image} alt="" />
       </div>
       <div className="descriptions">
-        <h4>{product.title}</h4>
+        <Link to={`/products/${product.id}`}>{product.title}</Link>
         <div className="pricesScore">
           <span>{formatPrice(product.price)}</span>
           <span>{formatPriceWithDiscount(product.price)}</span>

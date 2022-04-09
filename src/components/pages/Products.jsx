@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "../../firebase";
 import { ProductsContainer } from "../../styles/products";
 import CardProduct from "../atomics/CardProduct";
+import { TotalProductsContext } from "../../context/TotalProductsContext";
 
 const Products = () => {
+  const context = useContext(TotalProductsContext);
+  const { ProductsFirebase, setProductsFirebase } = context;
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -12,6 +15,8 @@ const Products = () => {
       const documentsFilter = documento.docs.map((d) => {
         return { ...d.data(), id: d.id };
       });
+
+      setProductsFirebase(documentsFilter);
       setProducts(documentsFilter);
     });
   }, []);

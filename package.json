@@ -11,6 +11,7 @@
     "firebase": "^9.6.10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-inner-image-zoom": "^3.0.0",
     "react-router-dom": "^6.3.0",
     "simple-rating-stars": "^1.6.0",
     "styled-components": "^5.3.5"
