@@ -5,7 +5,11 @@
   --color-text: #151875;
   --color-primary: #fb2e86;
   --color-white: #ffffff;
-  --color-gray10: #c2c2c2;
+  --color-gray10: #fcf4f4;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -27,4 +31,13 @@ code {
 
 .debug {
   border: 3px solid brown;
+}
+
+.text-center {
+  text-align: center;
+}
+
+main {
+  background-color: var(--color-gray10);
+  min-height: 100vh;
 }
