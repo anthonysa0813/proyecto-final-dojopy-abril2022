@@ -4,9 +4,11 @@ import { db } from "../../firebase";
 import { ProductsContainer } from "../../styles/products";
 import CardProduct from "../atomics/CardProduct";
 import { TotalProductsContext } from "../../context/TotalProductsContext";
+// import { TotalProductsContext } from "../../context/TotalProductsContext";
 
 const Products = () => {
   const context = useContext(TotalProductsContext);
+  console.log(context);
   const { ProductsFirebase, setProductsFirebase } = context;
   const [products, setProducts] = useState([]);
 
@@ -15,6 +17,7 @@ const Products = () => {
       const documentsFilter = documento.docs.map((d) => {
         return { ...d.data(), id: d.id };
       });
+      console.log(documentsFilter);
 
       setProductsFirebase(documentsFilter);
       setProducts(documentsFilter);

@@ -5,6 +5,7 @@ import { ProductoContext } from "../../context/ProductContext";
 
 const Header = () => {
   const { productArr } = useContext(ProductoContext);
+  const { totalPrice, products } = productArr;
 
   return (
     <HeaderContainer className="">
@@ -23,7 +24,7 @@ const Header = () => {
             <div className="cartContainer ">
               <i className="icon-shopping-cart ">
                 <span className="cartCircle">
-                  <p>{productArr.length}</p>
+                  <p>{products.length}</p>
                 </span>
               </i>
             </div>

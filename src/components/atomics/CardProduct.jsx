@@ -11,12 +11,33 @@ import { Link } from "react-router-dom";
 
 const CardProduct = ({ product }) => {
   const { productArr, setproductArr } = useContext(ProductoContext);
+  const { totalPrice, products } = productArr;
 
   const [stars, setStars] = useState(3);
   const [outOf, setOutOf] = useState(5);
 
   const addProduct = (producto) => {
-    setproductArr([...productArr, producto]);
+    setproductArr({
+      ...productArr,
+      products: [...productArr.products, producto],
+      totalPrice: selectPrice(products),
+    });
+  };
+
+  const selectPrice = (arr) => {
+    console.log(arr);
+    const filterPrice = arr.map((item) => item.price);
+
+    const totalPriceArr = filterPrice.reduce(
+      (previousValue, currentValue) =>
+        Number(previousValue) + Number(currentValue),
+      0
+    );
+    console.log(totalPriceArr);
+    setproductArr({
+      ...productArr,
+      totalPrice: totalPriceArr,
+    });
   };
 
   return (

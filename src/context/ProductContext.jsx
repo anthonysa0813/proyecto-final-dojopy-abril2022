@@ -7,9 +7,6 @@ const ProductProvider = ({ children }) => {
     products: [],
     totalPrice: 0,
   });
-
-  const totalPriceFunc = (arr) => {};
-
   return (
     <ProductoContext.Provider value={{ productArr, setproductArr }}>
       {children}
