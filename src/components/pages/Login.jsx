@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { LoginContainer } from "../../styles/login";
 
 const Login = () => {
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+
   return (
     <LoginContainer className="">
       <div className="wrapper">
