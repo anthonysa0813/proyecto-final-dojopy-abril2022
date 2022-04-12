@@ -18,7 +18,7 @@ const Login = () => {
           </div>
           <div className="field">
             <label htmlFor="">Escribe tu contraseña:</label>
-            <input type="password" />
+            <input type="password" name="password" />
           </div>
           <div className="field-button">
             <button className="btn btn-primary">Iniciar Sesión</button>
